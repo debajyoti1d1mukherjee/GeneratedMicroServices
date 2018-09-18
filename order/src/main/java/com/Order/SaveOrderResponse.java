@@ -1,5 +1,5 @@
 
-package com.Order;
+package com.order;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,30 +15,30 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "balance",
+    "Order",
     "name"
 })
 public class SaveOrderResponse {
 
-    @JsonProperty("balance")
-    private String balance;
+    @JsonProperty("Order")
+    private String order;
     @JsonProperty("name")
     private String name;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("balance")
-    public String getBalance() {
-        return balance;
+    @JsonProperty("Order")
+    public String getOrder() {
+        return order;
     }
 
-    @JsonProperty("balance")
-    public void setBalance(String balance) {
-        this.balance = balance;
+    @JsonProperty("Order")
+    public void setOrder(String order) {
+        this.order = order;
     }
 
-    public SaveOrderResponse withBalance(String balance) {
-        this.balance = balance;
+    public SaveOrderResponse withOrder(String order) {
+        this.order = order;
         return this;
     }
 
@@ -79,7 +79,7 @@ public class SaveOrderResponse {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(balance).append(name).append(additionalProperties).toHashCode();
+        return new HashCodeBuilder().append(order).append(name).append(additionalProperties).toHashCode();
     }
 
     @Override
@@ -91,7 +91,7 @@ public class SaveOrderResponse {
             return false;
         }
         SaveOrderResponse rhs = ((SaveOrderResponse) other);
-        return new EqualsBuilder().append(balance, rhs.balance).append(name, rhs.name).append(additionalProperties, rhs.additionalProperties).isEquals();
+        return new EqualsBuilder().append(order, rhs.order).append(name, rhs.name).append(additionalProperties, rhs.additionalProperties).isEquals();
     }
 
 }

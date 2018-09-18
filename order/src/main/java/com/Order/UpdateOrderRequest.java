@@ -15,27 +15,45 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "Order"
+    "id",
+    "name"
 })
-public class GetOrderResponse {
+public class UpdateOrderRequest {
 
-    @JsonProperty("Order")
-    private String order;
+    @JsonProperty("id")
+    private String id;
+    @JsonProperty("name")
+    private String name;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("Order")
-    public String getOrder() {
-        return order;
+    @JsonProperty("id")
+    public String getId() {
+        return id;
     }
 
-    @JsonProperty("Order")
-    public void setOrder(String order) {
-        this.order = order;
+    @JsonProperty("id")
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public GetOrderResponse withOrder(String order) {
-        this.order = order;
+    public UpdateOrderRequest withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    @JsonProperty("name")
+    public String getName() {
+        return name;
+    }
+
+    @JsonProperty("name")
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public UpdateOrderRequest withName(String name) {
+        this.name = name;
         return this;
     }
 
@@ -54,14 +72,14 @@ public class GetOrderResponse {
         this.additionalProperties.put(name, value);
     }
 
-    public GetOrderResponse withAdditionalProperty(String name, Object value) {
+    public UpdateOrderRequest withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(order).append(additionalProperties).toHashCode();
+        return new HashCodeBuilder().append(id).append(name).append(additionalProperties).toHashCode();
     }
 
     @Override
@@ -69,11 +87,11 @@ public class GetOrderResponse {
         if (other == this) {
             return true;
         }
-        if ((other instanceof GetOrderResponse) == false) {
+        if ((other instanceof UpdateOrderRequest) == false) {
             return false;
         }
-        GetOrderResponse rhs = ((GetOrderResponse) other);
-        return new EqualsBuilder().append(order, rhs.order).append(additionalProperties, rhs.additionalProperties).isEquals();
+        UpdateOrderRequest rhs = ((UpdateOrderRequest) other);
+        return new EqualsBuilder().append(id, rhs.id).append(name, rhs.name).append(additionalProperties, rhs.additionalProperties).isEquals();
     }
 
 }
