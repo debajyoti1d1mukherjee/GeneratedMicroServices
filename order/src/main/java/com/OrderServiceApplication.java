@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 @EnableEurekaClient
 @EnableCircuitBreaker
 @EnableHystrix
-public class orderServiceApplication {
+public class OrderServiceApplication {
     public static void main(String[] args){
-		SpringApplication.run(orderServiceApplication.class, args);
+		SpringApplication.run(OrderServiceApplication.class, args);
 		}
 }
 
